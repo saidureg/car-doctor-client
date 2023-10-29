@@ -1,7 +1,8 @@
 import { PropTypes } from "prop-types";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const ServicesCard = ({ service }) => {
-  const { title, price, img } = service;
+  const { _id, title, price, img } = service;
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
@@ -16,6 +17,9 @@ const ServicesCard = ({ service }) => {
             <AiOutlineArrowRight />
           </p>
         </div>
+        <Link to={`/checkout/${_id}`}>
+          <button className="btn btn-error text-white">Book Now</button>
+        </Link>
       </div>
     </div>
   );
